@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajero Automatico</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="cabecera" class="container-header">
+        <div class="container-nav">
+            <img id="Logo" src="./img/logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><input type="text" placeholder="  🔎Buscar"></li>
+                <li><a href="#">Botón 1</a></li>
+                <li><a href="#">Historial</a></li>
+                <li><a href="#">Ayuda</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container-main">
+        <h1>Cajero Automático</h1>
+        <section id="login" class="card">
+            <h2>Seleccionar cuenta</h2>
+            <select id="account-select" class="input-field">
+                <option value="0">Persona 1</option>
+                <option value="1">Persona 2</option>
+                <option value="2">Persona 3</option>
+            </select>
+            <br><br>
+            <input type="password" id="password" class="input-field" placeholder="Ingresa el password">
+            <br><br>
+            <button onclick="login()">Ingresar</button>
+            <p id="error-msg" class="error-msg"></p>
+        </section>
+        <section id="actions" class="card" style="display: none;">
+            <h2>Opciones</h2>
+            <button onclick="showBalance()">Consultar saldo</button>
+            <button onclick="deposit()">Ingresar monto</button>
+            <button onclick="withdraw()">Retirar monto</button>
+            <br><br>
+            <button onclick="logout()">Cerrar sesión</button>
+            <br><br>
+            <div id="result" class="result"></div>
+        </section>
+    </main>
+    <footer>
+        <h1>Final</h1>
+    </footer>
+    <script defer src="./app.js"></script>
+</body>
+</html>
