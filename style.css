@@ -5,8 +5,9 @@
     --very-light-pink: #c7c7c7;
     --text-input-field: #f7f7f7;
     --general-blue: #4e8ce4;
+    --general-green: #33b110;
     --sm: 1.4rem;
-    --md: 1.6px;
+    --md: 1.6rem;
     --lg: 1.8rem;
 }
 
@@ -101,6 +102,7 @@ main {
 h1 {
     color: var(--black);
     font-size: var(--lg);
+    margin-bottom: 20px;
 }
 
 .card {
@@ -122,15 +124,16 @@ h1 {
 
 button {
     padding: 10px 20px;
-    background-color: #4CAF50;
-    color: #fff;
+    background-color: var(--general-blue);
+    color: var(--white);
+    font-size: var(--md);
     border: none;
-    border-radius: 3px;
+    border-radius: 20px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: var(--general-green);
 }
 
 .error-msg {
