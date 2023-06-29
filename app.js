@@ -41,6 +41,18 @@ function showBalance() {
     result.textContent = "Saldo actual: $" + currentAccount.balance;
 }
 
+
+
+
+// funcion para validar saldo
+
+// function balanceValidation() {
+//     let balanceValidation = document.getElementById("resultado");
+//     if (currentAccount.balance = 1000000) {
+//         balanceValidation.textContent = "Haz alcanzado el tope maximo de tu cuenta."
+//     }
+// }
+
 // Vamos aqui para validar las condiones de tope saldo y unidad de ingreso
 
 function deposit() {

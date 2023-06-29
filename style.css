@@ -96,7 +96,7 @@ main {
     padding: 20px;
     background-color: var(--very-light-pink);
     border-radius: 20px;
-    height: 70%;
+    height: auto;
 }
 
 h1 {
