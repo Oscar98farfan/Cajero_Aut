@@ -1,17 +1,16 @@
-// Cuentas de ejemplo
-var accounts = [
+const accounts = [
     { name: "Persona 1", password: "1234", balance: 500 },
     { name: "Persona 2", password: "5678", balance: 1000 },
     { name: "Persona 3", password: "abcd", balance: 800 }
 ];
 
-var currentAccount = null;
+let currentAccount = null;
 
 function login() {
-    var accountSelect = document.getElementById("account-select");
-    var selectedAccountIndex = accountSelect.value;
-    var passwordInput = document.getElementById("password");
-    var errorMsg = document.getElementById("error-msg");
+    let accountSelect = document.getElementById("account-select");
+    let selectedAccountIndex = accountSelect.value;
+    let passwordInput = document.getElementById("password");
+    let errorMsg = document.getElementById("error-msg");
 
     if (passwordInput.value === accounts[selectedAccountIndex].password) {
         currentAccount = accounts[selectedAccountIndex];
@@ -27,13 +26,18 @@ function login() {
 }
 
 function showActions() {
-    document.getElementById("login").style.display = "none";
-    document.getElementById("actions").style.display = "block";
+    document.getElementById("login").style.display = "none";;
+    document.getElementById("actions").style.display = "flex";
+    document.getElementById("actions").style.flexDirection = "column";
+    document.getElementById("btnShow").style.margin = "0 0 5px 0";
+    document.getElementById("btnDeposit").style.margin = "0 0 5px 0";
+    document.getElementById("btnWithdraw").style.margin = "0 0 5px 0";
+
 }
 
 function showBalance() {
-    var resultDiv = document.getElementById("result");
-    resultDiv.textContent = "Saldo actual: $" + currentAccount.balance;
+    let result = document.getElementById("result");
+    result.textContent = "Saldo actual: $" + currentAccount.balance;
 }
 
 function deposit() {
@@ -46,8 +50,8 @@ function deposit() {
     }
 
     currentAccount.balance += amount;
-    var resultDiv = document.getElementById("result");
-    resultDiv.textContent = "Monto ingresado: $" + amount + "\nNuevo saldo total: $" + currentAccount.balance.toFixed(2);
+    var result = document.getElementById("result");
+    result.textContent = "Monto ingresado: $" + amount + "\nNuevo saldo total: $" + currentAccount.balance.toFixed(2);
 }
 
 function withdraw() {
@@ -65,8 +69,8 @@ function withdraw() {
     }
 
     currentAccount.balance -= amount;
-    var resultDiv = document.getElementById("result");
-    resultDiv.textContent = "Monto retirado: $" + amount + "\nNuevo saldo total: $" + currentAccount.balance.toFixed(2);
+    var result = document.getElementById("result");
+    result.textContent = "Monto retirado: $" + amount + "\nNuevo saldo total: $" + currentAccount.balance.toFixed(2);
 }
 
 function logout() {

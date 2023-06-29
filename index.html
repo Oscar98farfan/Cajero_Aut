@@ -37,13 +37,13 @@
         </section>
         <section id="actions" class="card" style="display: none;">
             <h2>Opciones</h2>
-            <button onclick="showBalance()">Consultar saldo</button>
-            <button onclick="deposit()">Ingresar monto</button>
-            <button onclick="withdraw()">Retirar monto</button>
+            <button id="btnShow" onclick="showBalance()">Consultar saldo</button>
+            <button id="btnDeposit" onclick="deposit()">Ingresar monto</button>
+            <button id="btnWithdraw" onclick="withdraw()">Retirar monto</button>
             <br><br>
-            <button onclick="logout()">Cerrar sesión</button>
+            <button id="btnLogout" onclick="logout()">Cerrar sesión</button>
             <br><br>
-            <div id="result" class="result"></div>
+            <p id="result" class="result"></p>
         </section>
     </main>
     <footer>
