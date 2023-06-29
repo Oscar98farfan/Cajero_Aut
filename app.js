@@ -37,12 +37,15 @@ function showActions() {
 
 function showBalance() {
     let result = document.getElementById("result");
+    document.getElementById("result").style.fontSize = "var(--sm)";
     result.textContent = "Saldo actual: $" + currentAccount.balance;
 }
 
+// Vamos aqui para validar las condiones de tope saldo y unidad de ingreso
+
 function deposit() {
-    var amount = prompt("Ingresa el monto a ingresar:");
-    amount = parseFloat(amount);
+    let amount = prompt("Ingresa el monto a depositar:");
+    amount = parseInt(amount);
 
     if (isNaN(amount) || amount <= 0) {
         alert("Ingresa un monto válido.");
