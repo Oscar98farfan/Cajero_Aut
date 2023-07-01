@@ -20,14 +20,16 @@
             </ul>
         </nav>
     </header>
+    
     <main class="container-main">
         <h1>Cajero Automático</h1>
         <section id="login" class="card">
             <h2>Seleccionar cuenta</h2>
             <select id="account-select" class="input-field">
-                <option value="0">Persona 1</option>
-                <option value="1">Persona 2</option>
-                <option value="2">Persona 3</option>
+                <option value="0"></option>
+                <option value="1">Oscar</option>
+                <option value="2">Lorena</option>
+                <option value="3">Miguel</option>
             </select>
             <br><br>
             <input type="password" id="password" class="input-field" placeholder="Ingresa el password">
@@ -47,7 +49,10 @@
         </section>
     </main>
     <footer>
-        <h1>Final</h1>
+        <div class="container-time">
+            <h2>La hora es: </h1>
+            <div id="dateTime"></div>
+        </div>
     </footer>
     <script defer src="./app.js"></script>
 </body>

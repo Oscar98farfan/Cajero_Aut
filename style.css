@@ -156,3 +156,20 @@ footer {
     grid-area: foot;
     flex-direction: column;
 }
+
+.container-time {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-time h2 {
+    font-size: var(--lg);
+}
+
+.container-time #dateTime {
+    font-size: var(--lg);
+    margin-left: 5px;
+    font-weight: bold;
+}

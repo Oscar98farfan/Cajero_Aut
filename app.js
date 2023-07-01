@@ -1,7 +1,14 @@
+setInterval(() => {
+    const currentDate = new Date();
+    const clockText = currentDate.toLocaleString();
+    document.getElementById("dateTime").textContent = clockText;
+}, 1000);
+
+
 const accounts = [
-    { name: "Persona 1", password: "1234", balance: 500 },
-    { name: "Persona 2", password: "5678", balance: 1000 },
-    { name: "Persona 3", password: "abcd", balance: 800 }
+    { name: "", password: "3698", balance: 500 },
+    { name: "Lorena", password: "5678", balance: 1000 },
+    { name: "Miguel", password: "abcd", balance: 800 }
 ];
 
 let currentAccount = null;
@@ -40,20 +47,6 @@ function showBalance() {
     document.getElementById("result").style.fontSize = "var(--sm)";
     result.textContent = "Saldo actual: $" + currentAccount.balance;
 }
-
-
-
-
-// funcion para validar saldo
-
-// function balanceValidation() {
-//     let balanceValidation = document.getElementById("resultado");
-//     if (currentAccount.balance = 1000000) {
-//         balanceValidation.textContent = "Haz alcanzado el tope maximo de tu cuenta."
-//     }
-// }
-
-// Vamos aqui para validar las condiones de tope saldo y unidad de ingreso
 
 function deposit() {
     let amount = prompt("Ingresa el monto a depositar:");
