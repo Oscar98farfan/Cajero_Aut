@@ -58,28 +58,37 @@ function showBalance() {
 function deposit() {
     let amount = prompt("Ingresa el monto a depositar:");
     amount = parseInt(amount);
+    let balance = currentAccount.balance;
+    let amountEnter = currentAccount.balance + amount;
 
     if (isNaN(amount) || amount <= 0) {
         alert("Ingresa un monto válido.");
         return;
     }
 
+    if (amountEnter > 10000) {
+        alert("No puedes incluir esta cantidad, excede tu monto");
+        return;
+    }
+
     currentAccount.balance += amount;
-    var result = document.getElementById("result");
+    let result = document.getElementById("result");
     result.textContent = "Monto ingresado: $" + amount + "\nNuevo saldo total: $" + currentAccount.balance.toFixed(2);
 }
 
 function withdraw() {
     var amount = prompt("Ingresa el monto a retirar:");
-    amount = parseFloat(amount);
+    amount = parseInt(amount);
+    let balance = currentAccount.balance;
+    let amountOut = currentAccount.balance - amount;
 
     if (isNaN(amount) || amount <= 0) {
         alert("Ingresa un monto válido.");
         return;
     }
 
-    if (currentAccount.balance - amount < 10 || currentAccount.balance - amount > 990) {
-        alert("La operación excede los límites permitidos.");
+    if (amountOut < 10) {
+        alert("No puedes sacar esta cantidad, debes dejar minimo 10");
         return;
     }
 
