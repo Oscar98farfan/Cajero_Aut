@@ -4,14 +4,41 @@ setInterval(() => {
     document.getElementById("dateTime").textContent = clockText;
 }, 1000);
 
+const btnHelp = document.querySelector("#btnHelp");
+const btnClose = document.getElementById("btnClose");
+
 
 const accounts = [
     { name: "", password: "3698", balance: 500 },
+    { name: "Oscar", password: "1234", balance: 1000 },
     { name: "Lorena", password: "5678", balance: 1000 },
     { name: "Miguel", password: "abcd", balance: 800 }
 ];
 
 let currentAccount = null;
+
+btnHelp.addEventListener("click", function () {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("help").style.display = "flex";
+    document.getElementById("help").style.flexDirection = "column";
+    document.getElementById("help").style.fontSize = "var(--sm)";
+})
+
+btnClose.addEventListener("click", function(){
+    var accountSelect = document.getElementById("account-select");
+    var passwordInput = document.getElementById("password");
+    
+    currentAccount = null;
+    accountSelect.disabled = false;
+    passwordInput.disabled = false;
+    passwordInput.value = "";
+    document.getElementById("help").style.display = "none";
+    document.getElementById("login").style.display = "block";
+    document.getElementById("result").textContent = "";
+
+})
+
+
 
 function login() {
     let accountSelect = document.getElementById("account-select");
@@ -33,7 +60,7 @@ function login() {
 }
 
 function showActions() {
-    document.getElementById("login").style.display = "none";;
+    document.getElementById("login").style.display = "none";
     document.getElementById("actions").style.display = "flex";
     document.getElementById("actions").style.flexDirection = "column";
     document.getElementById("btnShow").style.margin = "0 0 5px 0";

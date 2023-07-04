@@ -14,9 +14,9 @@
         <nav>
             <ul class="menu">
                 <li><input type="text" placeholder="  🔎Buscar"></li>
-                <li><a href="#">Botón 1</a></li>
-                <li><a href="#">Historial</a></li>
-                <li><a href="#">Ayuda</a></li>
+                <li><button id="btnAddAccount">Agregar Cuenta</button></li>
+                <li><button id="btnHistory">Historial</button></li>
+                <li><button id="btnHelp">Ayuda</button></li>
             </ul>
         </nav>
     </header>
@@ -46,6 +46,17 @@
             <button id="btnLogout" onclick="logout()">Cerrar sesión</button>
             <br><br>
             <p id="result" class="result"></p>
+        </section>
+        <section id="help" class="card" style="display: none;">
+            <h2>Como se usa:</h2>
+            <p>Hola! Bienvenido al cajero automatico para hacer uso de estos servicios sigue las siguientes recomendaciones: <br></p>
+            <ol>
+                <li>Selecciona la cuenta que deseas utilizar.</li>
+                <li>Escribe tu contraseña para ingresar al cajero automático.</li>
+                <li>Puedes consultar tus movimientos, realizar depósitos y retiros desde esta pantalla.</li>
+                <li>Para cerrar sesión pulsa en "cerrar sesión"</li>
+            </ol>
+            <button id="btnClose" onclick="logout()">Cerrar</button>
         </section>
     </main>
     <footer>
