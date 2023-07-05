@@ -92,7 +92,7 @@ main {
     align-items: center;
     justify-content: center;
     max-width: 400px;
-    margin: 60px auto;
+    margin: 40px auto;
     padding: 20px;
     background-color: var(--very-light-pink);
     border-radius: 20px;

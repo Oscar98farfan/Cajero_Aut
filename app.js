@@ -6,7 +6,7 @@ setInterval(() => {
 
 const btnHelp = document.querySelector("#btnHelp");
 const btnClose = document.getElementById("btnClose");
-
+const historyLogin = [];
 
 const accounts = [
     { name: "", password: "3698", balance: 500 },
@@ -16,29 +16,6 @@ const accounts = [
 ];
 
 let currentAccount = null;
-
-btnHelp.addEventListener("click", function () {
-    document.getElementById("login").style.display = "none";
-    document.getElementById("help").style.display = "flex";
-    document.getElementById("help").style.flexDirection = "column";
-    document.getElementById("help").style.fontSize = "var(--sm)";
-})
-
-btnClose.addEventListener("click", function(){
-    var accountSelect = document.getElementById("account-select");
-    var passwordInput = document.getElementById("password");
-    
-    currentAccount = null;
-    accountSelect.disabled = false;
-    passwordInput.disabled = false;
-    passwordInput.value = "";
-    document.getElementById("help").style.display = "none";
-    document.getElementById("login").style.display = "block";
-    document.getElementById("result").textContent = "";
-
-})
-
-
 
 function login() {
     let accountSelect = document.getElementById("account-select");
@@ -55,7 +32,7 @@ function login() {
     } else {
         errorMsg.textContent = "Contraseña incorrecta. Intenta nuevamente.";
     }
-
+    
     passwordInput.value = "";
 }
 
@@ -128,4 +105,40 @@ function logout() {
     document.getElementById("actions").style.display = "none";
     document.getElementById("login").style.display = "block";
     document.getElementById("result").textContent = "";
+}
+
+// Funciones del nav
+
+btnHelp.addEventListener("click", function () {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("help").style.display = "flex";
+    document.getElementById("help").style.flexDirection = "column";
+    document.getElementById("help").style.fontSize = "var(--sm)";
+})
+    
+btnClose.addEventListener("click", function(){
+    var accountSelect = document.getElementById("account-select");
+    var passwordInput = document.getElementById("password");
+    
+    currentAccount = null;
+    accountSelect.disabled = false;
+    passwordInput.disabled = false;
+    passwordInput.value = "";
+    document.getElementById("help").style.display = "none";
+    document.getElementById("login").style.display = "block";
+    document.getElementById("result").textContent = "";
+    
+})
+
+
+// Falta completar funcion de historial
+
+function addHistory(usuario, fecha){
+    let accountSelect = document.getElementById("account-select");
+    let selectedAccountIndex = accountSelect.value;
+    let timeSelect = document.getElementById("dateTime");
+    let time = timeSelect.value;
+    const acces = {selectedAccountIndex, time};
+    historyLogin.push(acces);
+    console.log(addHistory)
 }

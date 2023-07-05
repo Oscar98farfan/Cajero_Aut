@@ -15,7 +15,7 @@
             <ul class="menu">
                 <li><input type="text" placeholder="  🔎Buscar"></li>
                 <li><button id="btnAddAccount">Agregar Cuenta</button></li>
-                <li><button id="btnHistory">Historial</button></li>
+                <li><button id="btnHistory" onclick="addHistory()">Historial</button></li>
                 <li><button id="btnHelp">Ayuda</button></li>
             </ul>
         </nav>
@@ -55,8 +55,14 @@
                 <li>Escribe tu contraseña para ingresar al cajero automático.</li>
                 <li>Puedes consultar tus movimientos, realizar depósitos y retiros desde esta pantalla.</li>
                 <li>Para cerrar sesión pulsa en "cerrar sesión"</li>
+                <li>Recuerda que no puedes tener mas de  $ 10.000, ni puedes dejar menos de $ 10.</li>
             </ol>
             <button id="btnClose" onclick="logout()">Cerrar</button>
+        </section>
+        <section id="history" class="card" style="display: none;">
+            <ul>
+                <li></li>
+            </ul>
         </section>
     </main>
     <footer>
