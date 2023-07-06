@@ -6,6 +6,7 @@ setInterval(() => {
 
 const btnHelp = document.querySelector("#btnHelp");
 const btnClose = document.getElementById("btnClose");
+const btnbtnAddAccount = document.getElementById("btnAddAccount")
 const historyLogin = [];
 
 const accounts = [
@@ -112,6 +113,7 @@ function logout() {
     document.getElementById("actions").style.display = "none";
     document.getElementById("help").style.display = "none";
     document.getElementById("history").style.display = "none";
+    document.getElementById("add").style.display = "none";
     document.getElementById("login").style.display = "block";
     document.getElementById("result").textContent = "";
 }
@@ -139,6 +141,8 @@ btnClose.addEventListener("click", function(){
     
 })
 
+
+
 function addHistory() {
     document.getElementById("login").style.display = "none";
     document.getElementById("history").style.display = "block";
@@ -151,4 +155,36 @@ function addHistory() {
         li.textContent = historyLogin[i];
         myList.appendChild(li);
     }
+}
+
+
+
+btnbtnAddAccount.addEventListener("click", function(){
+    document.getElementById("login").style.display = "none";
+    document.getElementById("add").style.display = "flex";
+    document.getElementById("add").style.flexDirection = "column";
+    document.getElementById("add").style.fontSize = "var(--sm)";
+    document.getElementById("btnSave").style.marginTop = "10px";
+})
+
+function addAccounts() {
+    let nombre = document.getElementById("addName").value;
+    let contrasena = document.getElementById("addPassword").value;
+    let efectivo = document.getElementById("addBalance").value;
+    let accountSelect = document.getElementById("account-select");
+
+    let addUser = {
+        name:nombre,
+        password: contrasena,
+        balance:efectivo,
+    };
+    accounts.push(addUser);
+
+    const nuevaOpcion = document.createElement("option");
+    nuevaOpcion.value = accountSelect.length +1;
+    nuevaOpcion.text = `${nombre}`;
+
+    accountSelect.appendChild(nuevaOpcion);
+
+    logout()
 }

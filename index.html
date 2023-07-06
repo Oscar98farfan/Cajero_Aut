@@ -65,6 +65,14 @@
             </ul>
             <button onclick="logout()">Cerrar</button>
         </section>
+        <section id="add" class="card" style="display: none;">
+            <p>Si deseas agregar una nueva cuenta llena el formulario y dale guardar.</p>
+            <input type="text" id="addName" class="input-field" placeholder="Ingresa tu nombre">
+            <input type="password" id="addPassword" class="input-field" placeholder="Ingresa el password">
+            <input type="number" id="addBalance" class="input-field" placeholder="Ingresa tu saldo">
+            <button onclick="logout()">Cerrar</button>
+            <button id="btnSave" onclick="addAccounts()">Guardar</button>
+        </section>
     </main>
     <footer>
         <div class="container-time">
