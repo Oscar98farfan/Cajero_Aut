@@ -110,6 +110,8 @@ function logout() {
     passwordInput.disabled = false;
     passwordInput.value = "";
     document.getElementById("actions").style.display = "none";
+    document.getElementById("help").style.display = "none";
+    document.getElementById("history").style.display = "none";
     document.getElementById("login").style.display = "block";
     document.getElementById("result").textContent = "";
 }
@@ -137,3 +139,16 @@ btnClose.addEventListener("click", function(){
     
 })
 
+function addHistory() {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("history").style.display = "block";
+    // document.getElementById("history").style.flexDirection = "column";
+    document.getElementById("history").style.fontSize = "var(--sm)";
+    let myList = document.getElementById("historyList");
+
+    const li = document.createElement("li");
+    for (let i = 0; i < historyLogin.length; i++) {
+        li.textContent = historyLogin[i];
+        myList.appendChild(li);
+    }
+}
