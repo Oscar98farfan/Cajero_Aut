@@ -22,17 +22,24 @@ function login() {
     let selectedAccountIndex = accountSelect.value;
     let passwordInput = document.getElementById("password");
     let errorMsg = document.getElementById("error-msg");
-
+    // Esto es para que lo agregue al array del historial
+    let selectedOption = accountSelect.options[accountSelect.selectedIndex];
+    let selecUser = selectedOption.text;
+    let currentDate = new Date();
+    let clockText = currentDate.toLocaleString();
+    let history = "Ingreso " + selecUser + " en " + clockText;
+    
     if (passwordInput.value === accounts[selectedAccountIndex].password) {
         currentAccount = accounts[selectedAccountIndex];
         accountSelect.disabled = true;
         passwordInput.disabled = true;
         errorMsg.textContent = "";
         showActions();
+        // Aqui agrega al array
+        historyLogin.push(history);
     } else {
         errorMsg.textContent = "Contraseña incorrecta. Intenta nuevamente.";
     }
-    
     passwordInput.value = "";
 }
 
@@ -130,15 +137,3 @@ btnClose.addEventListener("click", function(){
     
 })
 
-
-// Falta completar funcion de historial
-
-function addHistory(usuario, fecha){
-    let accountSelect = document.getElementById("account-select");
-    let selectedAccountIndex = accountSelect.value;
-    let timeSelect = document.getElementById("dateTime");
-    let time = timeSelect.value;
-    const acces = {selectedAccountIndex, time};
-    historyLogin.push(acces);
-    console.log(addHistory)
-}
